@@ -1,3 +1,3 @@
 # Tprogramming_184_2020
 
-## Eugeny Konstantinov
+## Лампасова Анастасия 2/184

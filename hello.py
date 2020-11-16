@@ -1,16 +1,16 @@
 import numpy as np
 import matplotlib.pyplot as plt
-# import math
+import math
 
 def calc(a, b, x):
-    numerator = np.log((b**2 - x**2) ,a)
-    denomerator = abs((x**2 - a**2))**(1/3.0)
+    numerator = a * math.sqrt(x) - b * math.log(x,5)
+    denomerator = math.log10(abs(x-1))
     y = numerator/denomerator
     return y
 
 def calc_np(a, b, x):
-    numerator = np.log(b**2 - x**2)/np.log(a)
-    denomerator = abs((x**2 - a**2))**(1/3.0)
+    numerator = a * math.sqrt(x) - b * math.log(x,5)
+    denomerator = math.log10(abs(x-1))
     y = numerator/denomerator
     return y
 
@@ -46,17 +46,17 @@ def draw(x, y):
     plt.show()
 
 if __name__ == "__main__":
-    a = 2.0
-    b = 4.1
-    x = 0.77
-    # y = calc(a, b, x)
-    # print(f"x={x:.3f} y={y:.3f}")
+    a = 4.1
+    b = 2.7
+    x = 1.2
+    y = calc(a, b, x)
+    print(f"x={x:.3f} y={y:.3f}")
 
 
-    x, y = task_a_np(a, b, 0.77, 1.77, 0.2)
+    x, y = task_a_np(a, b, 1.2, 5.2, 0.8)
     draw(x, y)
     # print(a_res)
 
-    # x_arr = [1.24, 1.38, 2.38, 3.21, 0.68]
-    # b_res = task_b(a, b, x_arr)
-    # print(b_res)
+    x_arr = [1.9, 2.15, 2.34, 2.73, 3.16]
+    b_res = task_b(a, b, x_arr)
+    print(b_res)

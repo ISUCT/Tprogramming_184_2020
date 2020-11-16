@@ -4,7 +4,7 @@ import math
 
 def calc(a, b, x):
     numerator = a * math.sqrt(x) - b * math.log(x,5)
-    denomerator = math.log10(abs(x-1))
+    denomerator = 1 # math.log10(abs(x-1))
     y = numerator/denomerator
     return y
 
@@ -53,10 +53,13 @@ if __name__ == "__main__":
     print(f"x={x:.3f} y={y:.3f}")
 
 
-    x, y = task_a_np(a, b, 1.2, 5.2, 0.8)
-    draw(x, y)
-    # print(a_res)
+    a_res = task_a(a, b, 1.2, 5.2, 0.8)
+    # draw(x, y)
+    print(a_res)
 
     x_arr = [1.9, 2.15, 2.34, 2.73, 3.16]
     b_res = task_b(a, b, x_arr)
     print(b_res)
+    # plt.plot(*zip(*a_res), 'b')
+    # plt.plot(*zip(*b_res), 'r')
+    # plt.show()

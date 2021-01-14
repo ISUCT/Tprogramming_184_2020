@@ -9,6 +9,15 @@ def calc(a, b, x):
 a = 0.1
 b = 0.5
 x = 0.33
-y = calc(a,b,x)
+x1 = 1.23
+dx = 0.18
+xs = []
+ys = []
 
-print (f"x={x} y={y}")
+while x<=x1:
+    y = calc(a,b,x)
+    xs.append(x)
+    ys.append(y)
+    x+=dx
+
+print (f"x={xs} y={ys}")
